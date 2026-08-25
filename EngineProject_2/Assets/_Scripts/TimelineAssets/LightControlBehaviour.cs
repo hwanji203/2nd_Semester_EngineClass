@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Playables;
 
 namespace _Scripts.TimelineAssets
 {
+    [Serializable]
     public class LightControlBehaviour : PlayableBehaviour
     {
         public Color color = Color.white;

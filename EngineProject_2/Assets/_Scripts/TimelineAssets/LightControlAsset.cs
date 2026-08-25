@@ -5,18 +5,11 @@ namespace _Scripts.TimelineAssets
 {
     public class LightControlAsset : PlayableAsset
     {
-        public ExposedReference<Light> targetLight;
-        public Color color = Color.white;
-        public float intensity = 1.0f;
+        public LightControlBehaviour template;
         
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
-            var playable = ScriptPlayable<LightControlBehaviour>.Create(graph);
-            var behaviour = playable.GetBehaviour();
-
-            // behaviour.light = targetLight.Resolve(graph.GetResolver());
-            behaviour.color = color;
-            behaviour.intensity = intensity;
+            var playable = ScriptPlayable<LightControlBehaviour>.Create(graph, template);
             
             return playable;
         }
